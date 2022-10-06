@@ -7,23 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED130FED28EF8A2E00496508 /* NasaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED130FEC28EF8A2E00496508 /* NasaModel.swift */; };
+		ED130FF228EF8B6B00496508 /* AsteroidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED130FF128EF8B6B00496508 /* AsteroidViewController.swift */; };
+		ED130FF428EF8C3600496508 /* AsteroidPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED130FF328EF8C3600496508 /* AsteroidPresenter.swift */; };
+		ED130FF628EF8D0800496508 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED130FF528EF8D0800496508 /* Date+extension.swift */; };
 		EDF3AEA628E9F50100866449 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3AEA528E9F50100866449 /* AppDelegate.swift */; };
 		EDF3AEA828E9F50100866449 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3AEA728E9F50100866449 /* SceneDelegate.swift */; };
-		EDF3AEAA28E9F50100866449 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3AEA928E9F50100866449 /* ViewController.swift */; };
 		EDF3AEAF28E9F50200866449 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF3AEAE28E9F50200866449 /* Assets.xcassets */; };
 		EDF3AEB228E9F50200866449 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF3AEB028E9F50200866449 /* LaunchScreen.storyboard */; };
 		EDF3AEBE28E9F8F900866449 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3AEBD28E9F8F900866449 /* DataBase.swift */; };
+		EDF3AEC128E9FC1C00866449 /* ServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3AEC028E9FC1C00866449 /* ServerModel.swift */; };
+		EDF3AEC328E9FC2300866449 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3AEC228E9FC2300866449 /* Network.swift */; };
+		EDF3AEC528E9FC2A00866449 /* Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3AEC428E9FC2A00866449 /* Methods.swift */; };
+		EDF3AEC728E9FC3100866449 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3AEC628E9FC3100866449 /* API.swift */; };
+		EDF3AEC928E9FC4200866449 /* NasaNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3AEC828E9FC4200866449 /* NasaNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED130FEC28EF8A2E00496508 /* NasaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaModel.swift; sourceTree = "<group>"; };
+		ED130FF128EF8B6B00496508 /* AsteroidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidViewController.swift; sourceTree = "<group>"; };
+		ED130FF328EF8C3600496508 /* AsteroidPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidPresenter.swift; sourceTree = "<group>"; };
+		ED130FF528EF8D0800496508 /* Date+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extension.swift"; sourceTree = "<group>"; };
 		EDF3AEA228E9F50100866449 /* NASA-test-task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NASA-test-task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF3AEA528E9F50100866449 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDF3AEA728E9F50100866449 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EDF3AEA928E9F50100866449 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EDF3AEAE28E9F50200866449 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDF3AEB128E9F50200866449 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDF3AEB328E9F50200866449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDF3AEBD28E9F8F900866449 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
+		EDF3AEC028E9FC1C00866449 /* ServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModel.swift; sourceTree = "<group>"; };
+		EDF3AEC228E9FC2300866449 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		EDF3AEC428E9FC2A00866449 /* Methods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Methods.swift; sourceTree = "<group>"; };
+		EDF3AEC628E9FC3100866449 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		EDF3AEC828E9FC4200866449 /* NasaNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +53,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED130FEB28EF875F00496508 /* AsteroidList */ = {
+			isa = PBXGroup;
+			children = (
+				ED130FF028EF8B4E00496508 /* View */,
+				ED130FEF28EF8B4300496508 /* Presenter */,
+				ED130FEE28EF8B3B00496508 /* Model */,
+			);
+			path = AsteroidList;
+			sourceTree = "<group>";
+		};
+		ED130FEE28EF8B3B00496508 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED130FEC28EF8A2E00496508 /* NasaModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ED130FEF28EF8B4300496508 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				ED130FF328EF8C3600496508 /* AsteroidPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		ED130FF028EF8B4E00496508 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED130FF128EF8B6B00496508 /* AsteroidViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EDF3AE9928E9F50100866449 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +106,14 @@
 		EDF3AEA428E9F50100866449 /* NASA-test-task */ = {
 			isa = PBXGroup;
 			children = (
-				EDF3AEBC28E9F66E00866449 /* Base */,
-				EDF3AEBB28E9F66600866449 /* Network */,
 				EDF3AEBA28E9F66000866449 /* Controllers */,
+				EDF3AEBC28E9F66E00866449 /* DataBase */,
 				EDF3AEB928E9F65A00866449 /* Extensions */,
+				EDF3AEBB28E9F66600866449 /* Network */,
 				EDF3AEA528E9F50100866449 /* AppDelegate.swift */,
 				EDF3AEA728E9F50100866449 /* SceneDelegate.swift */,
-				EDF3AEA928E9F50100866449 /* ViewController.swift */,
-				EDF3AEAE28E9F50200866449 /* Assets.xcassets */,
 				EDF3AEB028E9F50200866449 /* LaunchScreen.storyboard */,
+				EDF3AEAE28E9F50200866449 /* Assets.xcassets */,
 				EDF3AEB328E9F50200866449 /* Info.plist */,
 			);
 			path = "NASA-test-task";
@@ -73,6 +122,7 @@
 		EDF3AEB928E9F65A00866449 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				ED130FF528EF8D0800496508 /* Date+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -80,6 +130,7 @@
 		EDF3AEBA28E9F66000866449 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ED130FEB28EF875F00496508 /* AsteroidList */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -87,16 +138,29 @@
 		EDF3AEBB28E9F66600866449 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				EDF3AEBF28E9FC0E00866449 /* Setting */,
+				EDF3AEC828E9FC4200866449 /* NasaNetwork.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
 		};
-		EDF3AEBC28E9F66E00866449 /* Base */ = {
+		EDF3AEBC28E9F66E00866449 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
 				EDF3AEBD28E9F8F900866449 /* DataBase.swift */,
 			);
-			path = Base;
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		EDF3AEBF28E9FC0E00866449 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3AEC028E9FC1C00866449 /* ServerModel.swift */,
+				EDF3AEC228E9FC2300866449 /* Network.swift */,
+				EDF3AEC428E9FC2A00866449 /* Methods.swift */,
+				EDF3AEC628E9FC3100866449 /* API.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,9 +233,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF3AEAA28E9F50100866449 /* ViewController.swift in Sources */,
+				ED130FF428EF8C3600496508 /* AsteroidPresenter.swift in Sources */,
+				EDF3AEC528E9FC2A00866449 /* Methods.swift in Sources */,
 				EDF3AEA628E9F50100866449 /* AppDelegate.swift in Sources */,
+				EDF3AEC928E9FC4200866449 /* NasaNetwork.swift in Sources */,
+				EDF3AEC328E9FC2300866449 /* Network.swift in Sources */,
+				ED130FED28EF8A2E00496508 /* NasaModel.swift in Sources */,
+				ED130FF628EF8D0800496508 /* Date+extension.swift in Sources */,
+				EDF3AEC128E9FC1C00866449 /* ServerModel.swift in Sources */,
+				ED130FF228EF8B6B00496508 /* AsteroidViewController.swift in Sources */,
 				EDF3AEBE28E9F8F900866449 /* DataBase.swift in Sources */,
+				EDF3AEC728E9FC3100866449 /* API.swift in Sources */,
 				EDF3AEA828E9F50100866449 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
