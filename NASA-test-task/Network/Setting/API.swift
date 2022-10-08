@@ -17,7 +17,7 @@ extension API {
     var method: String {
         switch self {
         case .asteroids:
-            return HTTPMethods.get.rawValue
+            return HTTPMethods.get.method
         }
     }
     
