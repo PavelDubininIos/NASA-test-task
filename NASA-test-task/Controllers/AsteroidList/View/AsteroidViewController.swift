@@ -11,6 +11,7 @@ final class AsteroidViewController: UIViewController {
     
     private let presenter = AsteroidPresenter()
     private lazy var dictionaryAsteroids = [String: [Asteroid]]()
+    private var bool = true
     
     private lazy var tableView: UITableView = {
         var tableView = UITableView()
@@ -87,7 +88,6 @@ extension AsteroidViewController: UITableViewDelegate, UITableViewDataSource {
 extension AsteroidViewController: AsteroidPresenterProtocol {
     
     func reloadData(value: NasaModel) {
-//        print(value)
         dictionaryAsteroids = value.near_earth_objects ?? [:]
         tableView.reloadData()
     }
