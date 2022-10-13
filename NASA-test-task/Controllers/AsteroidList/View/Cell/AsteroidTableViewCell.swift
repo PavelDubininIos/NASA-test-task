@@ -37,7 +37,7 @@ final class AsteroidTableViewCell: UITableViewCell {
     private lazy var diameterLabel: UILabel = {
        var label = UILabel()
         label.font = .helvetica16()
-        label.text =  "Диаметр:"
+        label.text =  Metric.diameterString
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
         return label
@@ -45,7 +45,7 @@ final class AsteroidTableViewCell: UITableViewCell {
     
     private lazy var flyToEarthLabel: UILabel = {
        var label = UILabel()
-        label.text = "Подлетает:"
+        label.text = Metric.flyToEarthString
         label.font = .helvetica16()
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
@@ -55,7 +55,7 @@ final class AsteroidTableViewCell: UITableViewCell {
     private lazy var closeApproachDistanceLabel: UILabel = {
        var label = UILabel()
         label.font = .helvetica16()
-        label.text = "на расстояние:"
+        label.text = Metric.closeApproachDistanceString
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
         return label
@@ -64,7 +64,7 @@ final class AsteroidTableViewCell: UITableViewCell {
     private lazy var isSentryObjectLabel: UILabel = {
        var label = UILabel()
         label.font = .helvetica16()
-        label.text = "Оценка:"
+        label.text = Metric.isSentryObjectString
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
         return label
@@ -146,24 +146,24 @@ final class AsteroidTableViewCell: UITableViewCell {
         nameLabel.text = value.name
         
         guard let distance = value.estimated_diameter?.meters?.estimated_diameter_min else { return }
-        diameterLabel.text = "Диаметр: " + "\(String(format: "%.0f", distance)) " + "м"
+        diameterLabel.text = "\(Metric.diameterString) " + "\(String(format: "%.0f", distance)) " + "м"
         
         guard let approachDate = value.close_approach_data?.first?.close_approach_date else { return }
-        flyToEarthLabel.text = "Подлетает: " + "\(approachDate)"
+        flyToEarthLabel.text = "\(Metric.flyToEarthString) " + "\(approachDate)"
         
         guard let closeApproachDistance = value.close_approach_data?.first?.miss_distance?.kilometers else { return }
         let doubleTypeDistance = Double(closeApproachDistance)
         let stringFormatDistance = String(format: "%.0f", doubleTypeDistance!)
-        closeApproachDistanceLabel.text = "на расстояние: " + "\(stringFormatDistance) " + "км"
+        closeApproachDistanceLabel.text = "\(Metric.closeApproachDistanceString) " + "\(stringFormatDistance) " + "км"
         
         guard let isSentry = value.is_sentry_object else { return }
         switch isSentry {
         case true:
-            isSentryObjectLabel.text = "Оценка: опасен"
+            isSentryObjectLabel.text = "\(Metric.isSentryObjectString) опасен"
             isSentryObjectLabel.textColor = .red
             isSentryObjectLabel.font = .helvetica16Bold()
         case false:
-            isSentryObjectLabel.text = "Оценка: не опасен"
+            isSentryObjectLabel.text = "\(Metric.isSentryObjectString) не опасен"
         }
         
         switch value.is_sentry_object {
@@ -180,5 +180,15 @@ final class AsteroidTableViewCell: UITableViewCell {
         } else {
             asteroidImage.image = UIImage(named: "HugeAsteroid")
         }
+    }
+}
+
+extension AsteroidTableViewCell {
+    
+    enum Metric {
+        static let diameterString: String = "Диаметр:"
+        static let flyToEarthString: String = "Подлетает:"
+        static let closeApproachDistanceString: String = "на расстояние:"
+        static let isSentryObjectString: String = "Оценка:"
     }
 }
