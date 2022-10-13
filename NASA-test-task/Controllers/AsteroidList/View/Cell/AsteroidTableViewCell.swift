@@ -34,6 +34,30 @@ final class AsteroidTableViewCell: UITableViewCell {
         return backColor
     }()
     
+    private lazy var greenGradient: CAGradientLayer = {
+       var layer = CAGradientLayer()
+        layer.colors = [UIColor(red: 0.811, green: 0.952, blue: 0.491, alpha: 1).cgColor,
+                        UIColor(red: 0.492, green: 0.908, blue: 0.549, alpha: 1).cgColor]
+        layer.locations = [0, 1]
+        layer.startPoint = CGPoint(x: 0.25, y: 0.5)
+        layer.endPoint = CGPoint(x: 0.75, y: 0.5)
+        layer.bounds = bounds.insetBy(dx: -1*frame.size.width, dy: -2.31*frame.size.height)
+        layer.position = center
+        return layer
+    }()
+    
+    private lazy var redGradient: CAGradientLayer = {
+       var layer = CAGradientLayer()
+        layer.colors = [UIColor(red: 1, green: 0.694, blue: 0.6, alpha: 1).cgColor,
+                        UIColor(red: 1, green: 0.031, blue: 0.267, alpha: 1).cgColor]
+        layer.locations = [0, 1]
+        layer.startPoint = CGPoint(x: 0.25, y: 0.5)
+        layer.endPoint = CGPoint(x: 0.75, y: 0.5)
+        layer.bounds = bounds.insetBy(dx: -1*bounds.size.width, dy: -2.31*bounds.size.height)
+        layer.position = center
+        return layer
+    }()
+    
     private lazy var diameterLabel: UILabel = {
        var label = UILabel()
         label.font = .helvetica16()
@@ -99,6 +123,7 @@ final class AsteroidTableViewCell: UITableViewCell {
     
     private func setupViews() {
         addSubview(backColor)
+        backColor.layer.addSublayer(greenGradient)
         
         [nameLabel, asteroidImage, dinosaurImage].forEach {
             backColor.addSubview($0)

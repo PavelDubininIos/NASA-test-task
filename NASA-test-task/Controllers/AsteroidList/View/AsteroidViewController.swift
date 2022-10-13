@@ -11,7 +11,6 @@ final class AsteroidViewController: UIViewController {
     
     private let presenter = AsteroidPresenter()
     private lazy var dictionaryAsteroids = [String: [Asteroid]]()
-    private var bool = true
     
     private lazy var tableView: UITableView = {
         var tableView = UITableView()
@@ -21,6 +20,7 @@ final class AsteroidViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.layer.borderWidth = 0.2
+        tableView.layer.cornerRadius = 10
         return tableView
     }()
     
