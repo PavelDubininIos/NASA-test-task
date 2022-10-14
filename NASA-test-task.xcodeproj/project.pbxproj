@@ -11,6 +11,7 @@
 		ED130FF228EF8B6B00496508 /* AsteroidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED130FF128EF8B6B00496508 /* AsteroidViewController.swift */; };
 		ED130FF428EF8C3600496508 /* AsteroidPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED130FF328EF8C3600496508 /* AsteroidPresenter.swift */; };
 		ED130FF628EF8D0800496508 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED130FF528EF8D0800496508 /* Date+extension.swift */; };
+		ED2BA7F928F9BD6700261CBE /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2BA7F828F9BD6700261CBE /* UIView+extension.swift */; };
 		EDC20B8428F5ACFD00645CEC /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC20B8328F5ACFD00645CEC /* Array+extension.swift */; };
 		EDC20B8628F5B31500645CEC /* UITableViewCell+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC20B8528F5B31500645CEC /* UITableViewCell+extension.swift */; };
 		EDC20B8928F5B50100645CEC /* AsteroidTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC20B8828F5B50100645CEC /* AsteroidTableViewCell.swift */; };
@@ -34,6 +35,7 @@
 		ED130FF128EF8B6B00496508 /* AsteroidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidViewController.swift; sourceTree = "<group>"; };
 		ED130FF328EF8C3600496508 /* AsteroidPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidPresenter.swift; sourceTree = "<group>"; };
 		ED130FF528EF8D0800496508 /* Date+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extension.swift"; sourceTree = "<group>"; };
+		ED2BA7F828F9BD6700261CBE /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		EDC20B8328F5ACFD00645CEC /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
 		EDC20B8528F5B31500645CEC /* UITableViewCell+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+extension.swift"; sourceTree = "<group>"; };
 		EDC20B8828F5B50100645CEC /* AsteroidTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidTableViewCell.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				EDC20B8A28F5C13100645CEC /* Color+extension.swift */,
 				EDC20B9028F6A70E00645CEC /* UIFont+extension.swift */,
 				EDC20B9228F6D1B200645CEC /* UIStackView+extension.swift */,
+				ED2BA7F828F9BD6700261CBE /* UIView+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				ED130FED28EF8A2E00496508 /* NasaModel.swift in Sources */,
 				EDC20B9128F6A70E00645CEC /* UIFont+extension.swift in Sources */,
 				EDC20B8B28F5C13100645CEC /* Color+extension.swift in Sources */,
+				ED2BA7F928F9BD6700261CBE /* UIView+extension.swift in Sources */,
 				EDC20B8628F5B31500645CEC /* UITableViewCell+extension.swift in Sources */,
 				ED130FF628EF8D0800496508 /* Date+extension.swift in Sources */,
 				EDC20B8928F5B50100645CEC /* AsteroidTableViewCell.swift in Sources */,

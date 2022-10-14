@@ -15,4 +15,19 @@ extension UIStackView {
         self.spacing = spacing
         self.translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    convenience init(_ axis: NSLayoutConstraint.Axis,
+                               _ distribution:UIStackView.Distribution,
+                               _ alignment: UIStackView.Alignment,
+                               _ spacing: CGFloat,
+                               _ arrangedSubviews: [UIView] ) {
+            self.init(arrangedSubviews: arrangedSubviews)
+            self.axis = axis
+            self.distribution = distribution
+            self.alignment = alignment
+            self.spacing = spacing
+            self.backgroundColor = .clear
+        }
 }
+
+
