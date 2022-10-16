@@ -10,7 +10,7 @@ import UIKit
 final class AsteroidViewController: UIViewController {
     
     private let presenter = AsteroidPresenter()
-    private lazy var dictionaryAsteroids = [String: [Asteroid]]()
+    private var dictionaryAsteroids = [String: [Asteroid]]()
     
     private lazy var tableView: UITableView = {
         var tableView = UITableView()
@@ -20,13 +20,14 @@ final class AsteroidViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.layer.borderWidth = 0.2
+        tableView.layer.cornerRadius = 10
         return tableView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .mainViewBackgroundColor
+        view.backgroundColor = .navigationColor
         
         presenter.delegate = self
         presenter.update()
@@ -80,6 +81,20 @@ extension AsteroidViewController: UITableViewDelegate, UITableViewDataSource {
         let value = dictionaryAsteroids[key]![indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: AsteroidTableViewCell.identifier, for: indexPath) as! AsteroidTableViewCell
         cell.setup(value: value)
+        
+        var type: AsteroidTableViewCell.TypeAsteroid {
+            switch value.estimated_diameter?.meters?.estimated_diameter_min ?? 0 {
+            case ...85:
+                return .small
+            case 85...300:
+                return .medium
+            case 300...:
+                return .huge
+            default:
+                return .small
+            }
+        }
+        cell.sizeAsteroid(type: type)
         return cell
     }
 }
@@ -87,7 +102,6 @@ extension AsteroidViewController: UITableViewDelegate, UITableViewDataSource {
 extension AsteroidViewController: AsteroidPresenterProtocol {
     
     func reloadData(value: NasaModel) {
-//        print(value)
         dictionaryAsteroids = value.near_earth_objects ?? [:]
         tableView.reloadData()
     }
