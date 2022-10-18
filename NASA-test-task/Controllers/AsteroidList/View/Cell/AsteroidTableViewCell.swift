@@ -17,16 +17,15 @@ final class AsteroidTableViewCell: UITableViewCell {
     private var fillStackView = UIStackView()
     
     private lazy var topView: UIView = {
-       let view = UIView()
-        view.backgroundColor = .green
+        let view = UIView()
         return view
     }()
     
     private lazy var bottomView: UIView = {
-       let view = UIView()
+        let view = UIView()
         return view
     }()
-        
+    
     enum TypeAsteroid {
         case small
         case medium
@@ -46,7 +45,7 @@ final class AsteroidTableViewCell: UITableViewCell {
     }
     
     private lazy var visibleView: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = .white
         view.layer.cornerRadius = 10
         view.clipsToBounds = true
@@ -60,7 +59,7 @@ final class AsteroidTableViewCell: UITableViewCell {
     }()
     
     private lazy var nameLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.font = .helvetica24Bold()
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
@@ -68,17 +67,12 @@ final class AsteroidTableViewCell: UITableViewCell {
     }()
     
     private lazy var dinosaurImage: UIImageView = {
-       let image = UIImageView(image: UIImage(named: "Dinosaur"))
+        let image = UIImageView(image: UIImage(named: "Dinosaur"))
         return image
     }()
     
-    private lazy var backColor: UIView = {
-        let backColor = UIView()
-        return backColor
-    }()
-    
     private lazy var diameterLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.font = .helvetica16()
         label.text =  Metric.diameterString
         label.adjustsFontSizeToFitWidth = true
@@ -87,7 +81,7 @@ final class AsteroidTableViewCell: UITableViewCell {
     }()
     
     private lazy var flyToEarthLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = Metric.flyToEarthString
         label.font = .helvetica16()
         label.adjustsFontSizeToFitWidth = true
@@ -96,7 +90,7 @@ final class AsteroidTableViewCell: UITableViewCell {
     }()
     
     private lazy var closeApproachDistanceLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.font = .helvetica16()
         label.text = Metric.closeApproachDistanceString
         label.adjustsFontSizeToFitWidth = true
@@ -105,7 +99,7 @@ final class AsteroidTableViewCell: UITableViewCell {
     }()
     
     private lazy var isSentryObjectLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.font = .helvetica16()
         label.text = Metric.isSentryObjectString
         label.adjustsFontSizeToFitWidth = true
@@ -142,23 +136,22 @@ final class AsteroidTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-        
+    
     //MARK: - Functions
     
     private func viewTranslatesAutoresizingMaskIntoConstraintsToFalse() {
         [
-         visibleView,
-         asteroidImage,
-         nameLabel,
-         backColor,
-         dinosaurImage,
-         diameterLabel,
-         flyToEarthLabel,
-         closeApproachDistanceLabel,
-         isSentryObjectLabel,
-         button,
-         fullStackView,
-         fillStackView
+            visibleView,
+            asteroidImage,
+            nameLabel,
+            dinosaurImage,
+            diameterLabel,
+            flyToEarthLabel,
+            closeApproachDistanceLabel,
+            isSentryObjectLabel,
+            button,
+            fullStackView,
+            fillStackView
         ]
             .removeConstraints()
     }
@@ -169,18 +162,47 @@ final class AsteroidTableViewCell: UITableViewCell {
     }
     
     private func configStacks() {
+        fullStackView = UIStackView(.vertical, .fill, .fill, 0, [topView, bottomView])
         paramsStackView = UIStackView(.vertical, .equalSpacing, .fill, 8, [diameterLabel, flyToEarthLabel, closeApproachDistanceLabel])
         infoStackView = UIStackView(.horizontal, .equalSpacing, .fill, 10, [isSentryObjectLabel, button])
         fillStackView = UIStackView(.vertical, .equalSpacing, .fill, 16, [paramsStackView, infoStackView])
-        fullStackView = UIStackView(.vertical, .fill, .fill, 0, [topView, bottomView])
+        
+    }
+    
+    private func gradientView(isSentryAsteroid: Bool) {
+        switch isSentryAsteroid {
+        case true:
+            let leftColor = UIColor(red: 1, green: 0.694, blue: 0.6, alpha: 1).cgColor
+            let rightColor = UIColor(red: 1, green: 0.031, blue: 0.267, alpha: 1).cgColor
+            insertGradient(leftColor: leftColor, rightColor: rightColor)
+        case false:
+            let leftColor = UIColor(red: 0.811, green: 0.952, blue: 0.491, alpha: 1).cgColor
+            let rightColor = UIColor(red: 0.492, green: 0.908, blue: 0.549, alpha: 1).cgColor
+            insertGradient(leftColor: leftColor, rightColor: rightColor)
+        }
+    }
+    
+//TODO: - Change frame of gradient
+    
+    private func insertGradient(leftColor: CGColor, rightColor: CGColor) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [leftColor, rightColor]
+        gradientLayer.startPoint = CGPoint(x: 0.25, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 0.75, y: 0.5)
+        gradientLayer.locations = [0, 1]
+        gradientLayer.frame.origin.x = CGFloat(0)
+        gradientLayer.frame.origin.y = CGFloat(145)
+        gradientLayer.frame.size.height = CGFloat(-145)
+        gradientLayer.frame.size.width = CGFloat(385)
+        gradientLayer.frame.size.width = contentView.layer.frame.size.width + dinosaurImage.layer.frame.size.width + CGFloat(29)
+        topView.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     private func setupViews() {
-        
         contentView.addSubview(visibleView)
         configStacks()
         visibleView.addSubview(fullStackView)
-        topView.addSubviews(backColor, dinosaurImage, asteroidImage, nameLabel)
+        topView.addSubviews(dinosaurImage, asteroidImage, nameLabel)
         bottomView.addSubviews(fillStackView)
         
         NSLayoutConstraint.activate([
@@ -200,7 +222,7 @@ final class AsteroidTableViewCell: UITableViewCell {
             fillStackView.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -16),
             
             dinosaurImage.trailingAnchor.constraint(equalTo: topView.trailingAnchor, constant: -12),
-            dinosaurImage.bottomAnchor.constraint(equalTo: topView.bottomAnchor),
+            dinosaurImage.topAnchor.constraint(equalTo: topView.topAnchor, constant: 115),
             dinosaurImage.widthAnchor.constraint(equalToConstant: 35),
             dinosaurImage.heightAnchor.constraint(equalToConstant: 30),
             
@@ -211,13 +233,11 @@ final class AsteroidTableViewCell: UITableViewCell {
             
             asteroidImage.leadingAnchor.constraint(equalTo: topView.leadingAnchor, constant: 22),
             asteroidImage.trailingAnchor.constraint(lessThanOrEqualTo: topView.trailingAnchor),
-            asteroidImage.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -21),
+            asteroidImage.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -23),
             asteroidImage.topAnchor.constraint(greaterThanOrEqualTo: topView.topAnchor, constant: 0),
             
             button.heightAnchor.constraint(equalToConstant: 28),
-            button.widthAnchor.constraint(equalToConstant: 121),
-//            button.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -16),
-//            button.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -16)
+            button.widthAnchor.constraint(equalToConstant: 121)
         ])
     }
     
@@ -241,13 +261,15 @@ final class AsteroidTableViewCell: UITableViewCell {
             isSentryObjectLabel.text = "\(Metric.isSentryObjectString) опасен"
             isSentryObjectLabel.textColor = .red
             isSentryObjectLabel.font = .helvetica16Bold()
+            gradientView(isSentryAsteroid: true)
         case false:
             isSentryObjectLabel.text = "\(Metric.isSentryObjectString) не опасен"
+            gradientView(isSentryAsteroid: true)
         }
     }
 }
 
-    //MARK: - Extensions
+//MARK: - Extensions
 
 @objc
 extension AsteroidTableViewCell {
