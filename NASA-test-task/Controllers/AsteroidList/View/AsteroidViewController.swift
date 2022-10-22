@@ -33,13 +33,17 @@ final class AsteroidViewController: UIViewController {
         presenter.update()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage(systemName: "line.3.horizontal.decrease"), style: .done, target: self, action: #selector(openFilterAction))
-        title = "Армагеддон 2022"
         
         tableView.register(AsteroidTableViewCell.self, forCellReuseIdentifier: AsteroidTableViewCell.identifier)
         
         setupViews()
         viewTranslatesAutoresizingMaskIntoConstraints()
         setupConstraints()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        title = "Армагеддон 2022"
     }
     
     private func viewTranslatesAutoresizingMaskIntoConstraints() {
@@ -110,6 +114,7 @@ extension AsteroidViewController: AsteroidPresenterProtocol {
 @objc
 extension AsteroidViewController {
     func openFilterAction() {
-        print(#function)
+        let navigationFilter = FilterScreenViewController()
+        navigationController?.pushViewController(navigationFilter, animated: true)
     }
 }

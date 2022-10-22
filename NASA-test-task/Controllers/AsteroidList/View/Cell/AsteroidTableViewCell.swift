@@ -264,7 +264,7 @@ final class AsteroidTableViewCell: UITableViewCell {
             gradientView(isSentryAsteroid: true)
         case false:
             isSentryObjectLabel.text = "\(Metric.isSentryObjectString) не опасен"
-            gradientView(isSentryAsteroid: true)
+            gradientView(isSentryAsteroid: false)
         }
     }
 }
