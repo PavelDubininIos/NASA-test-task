@@ -19,15 +19,11 @@ final class AsteroidViewController: UIViewController {
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
-        tableView.layer.borderWidth = 0.2
-        tableView.layer.cornerRadius = 10
         return tableView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .navigationColor
         
         presenter.delegate = self
         presenter.update()
@@ -43,7 +39,10 @@ final class AsteroidViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.layer.borderWidth = 0.3
+        tableView.layer.borderColor = UIColor.black.cgColor
         title = "Армагеддон 2022"
+        tableView.backgroundColor = .white
     }
     
     private func viewTranslatesAutoresizingMaskIntoConstraints() {
@@ -85,7 +84,6 @@ extension AsteroidViewController: UITableViewDelegate, UITableViewDataSource {
         let value = dictionaryAsteroids[key]![indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: AsteroidTableViewCell.identifier, for: indexPath) as! AsteroidTableViewCell
         cell.setup(value: value)
-        
         var type: AsteroidTableViewCell.TypeAsteroid {
             switch value.estimated_diameter?.meters?.estimated_diameter_min ?? 0 {
             case ...85:

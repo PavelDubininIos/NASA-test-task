@@ -131,6 +131,7 @@ final class AsteroidTableViewCell: UITableViewCell {
         contentView.backgroundColor = .clear
         setupViews()
         viewTranslatesAutoresizingMaskIntoConstraintsToFalse()
+        makeShadowUnderView()
     }
     
     required init?(coder: NSCoder) {
