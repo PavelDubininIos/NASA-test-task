@@ -12,12 +12,14 @@
 		ED130FF428EF8C3600496508 /* AsteroidPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED130FF328EF8C3600496508 /* AsteroidPresenter.swift */; };
 		ED130FF628EF8D0800496508 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED130FF528EF8D0800496508 /* Date+extension.swift */; };
 		ED2BA7F928F9BD6700261CBE /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2BA7F828F9BD6700261CBE /* UIView+extension.swift */; };
+		ED671DDB28FF738E0008B55C /* FilterScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED671DDA28FF738E0008B55C /* FilterScreenViewController.swift */; };
 		EDC20B8428F5ACFD00645CEC /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC20B8328F5ACFD00645CEC /* Array+extension.swift */; };
 		EDC20B8628F5B31500645CEC /* UITableViewCell+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC20B8528F5B31500645CEC /* UITableViewCell+extension.swift */; };
 		EDC20B8928F5B50100645CEC /* AsteroidTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC20B8828F5B50100645CEC /* AsteroidTableViewCell.swift */; };
 		EDC20B8B28F5C13100645CEC /* Color+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC20B8A28F5C13100645CEC /* Color+extension.swift */; };
 		EDC20B9128F6A70E00645CEC /* UIFont+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC20B9028F6A70E00645CEC /* UIFont+extension.swift */; };
 		EDC20B9328F6D1B200645CEC /* UIStackView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC20B9228F6D1B200645CEC /* UIStackView+extension.swift */; };
+		EDF04FA32906B14000125B05 /* FirstFilterScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF04FA22906B14000125B05 /* FirstFilterScreenCell.swift */; };
 		EDF3AEA628E9F50100866449 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3AEA528E9F50100866449 /* AppDelegate.swift */; };
 		EDF3AEA828E9F50100866449 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3AEA728E9F50100866449 /* SceneDelegate.swift */; };
 		EDF3AEAF28E9F50200866449 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF3AEAE28E9F50200866449 /* Assets.xcassets */; };
@@ -36,12 +38,14 @@
 		ED130FF328EF8C3600496508 /* AsteroidPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidPresenter.swift; sourceTree = "<group>"; };
 		ED130FF528EF8D0800496508 /* Date+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extension.swift"; sourceTree = "<group>"; };
 		ED2BA7F828F9BD6700261CBE /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+		ED671DDA28FF738E0008B55C /* FilterScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterScreenViewController.swift; sourceTree = "<group>"; };
 		EDC20B8328F5ACFD00645CEC /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
 		EDC20B8528F5B31500645CEC /* UITableViewCell+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+extension.swift"; sourceTree = "<group>"; };
 		EDC20B8828F5B50100645CEC /* AsteroidTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidTableViewCell.swift; sourceTree = "<group>"; };
 		EDC20B8A28F5C13100645CEC /* Color+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+extension.swift"; sourceTree = "<group>"; };
 		EDC20B9028F6A70E00645CEC /* UIFont+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+extension.swift"; sourceTree = "<group>"; };
 		EDC20B9228F6D1B200645CEC /* UIStackView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+extension.swift"; sourceTree = "<group>"; };
+		EDF04FA22906B14000125B05 /* FirstFilterScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstFilterScreenCell.swift; sourceTree = "<group>"; };
 		EDF3AEA228E9F50100866449 /* NASA-test-task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NASA-test-task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF3AEA528E9F50100866449 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDF3AEA728E9F50100866449 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,10 +106,35 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		ED28F7F728FF0BB80011F715 /* FilterScreen */ = {
+			isa = PBXGroup;
+			children = (
+				ED671DD928FF73830008B55C /* View */,
+			);
+			path = FilterScreen;
+			sourceTree = "<group>";
+		};
+		ED671DD928FF73830008B55C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED671DDA28FF738E0008B55C /* FilterScreenViewController.swift */,
+				EDF04FA12906B11800125B05 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EDC20B8728F5B4EE00645CEC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				EDC20B8828F5B50100645CEC /* AsteroidTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EDF04FA12906B11800125B05 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EDF04FA22906B14000125B05 /* FirstFilterScreenCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -159,6 +188,7 @@
 		EDF3AEBA28E9F66000866449 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ED28F7F728FF0BB80011F715 /* FilterScreen */,
 				ED130FEB28EF875F00496508 /* AsteroidList */,
 			);
 			path = Controllers;
@@ -262,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDF04FA32906B14000125B05 /* FirstFilterScreenCell.swift in Sources */,
 				EDC20B8428F5ACFD00645CEC /* Array+extension.swift in Sources */,
 				ED130FF428EF8C3600496508 /* AsteroidPresenter.swift in Sources */,
 				EDF3AEC528E9FC2A00866449 /* Methods.swift in Sources */,
@@ -274,6 +305,7 @@
 				EDC20B8B28F5C13100645CEC /* Color+extension.swift in Sources */,
 				ED2BA7F928F9BD6700261CBE /* UIView+extension.swift in Sources */,
 				EDC20B8628F5B31500645CEC /* UITableViewCell+extension.swift in Sources */,
+				ED671DDB28FF738E0008B55C /* FilterScreenViewController.swift in Sources */,
 				ED130FF628EF8D0800496508 /* Date+extension.swift in Sources */,
 				EDC20B8928F5B50100645CEC /* AsteroidTableViewCell.swift in Sources */,
 				EDF3AEC128E9FC1C00866449 /* ServerModel.swift in Sources */,

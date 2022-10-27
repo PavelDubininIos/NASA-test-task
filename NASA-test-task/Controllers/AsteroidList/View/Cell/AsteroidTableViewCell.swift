@@ -131,6 +131,7 @@ final class AsteroidTableViewCell: UITableViewCell {
         contentView.backgroundColor = .clear
         setupViews()
         viewTranslatesAutoresizingMaskIntoConstraintsToFalse()
+        makeShadowUnderView()
     }
     
     required init?(coder: NSCoder) {
@@ -264,7 +265,7 @@ final class AsteroidTableViewCell: UITableViewCell {
             gradientView(isSentryAsteroid: true)
         case false:
             isSentryObjectLabel.text = "\(Metric.isSentryObjectString) не опасен"
-            gradientView(isSentryAsteroid: true)
+            gradientView(isSentryAsteroid: false)
         }
     }
 }
